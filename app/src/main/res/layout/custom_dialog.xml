@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/_10sdp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yangi kurs qo'shish"
+        android:textColor="#3F51B5"
+        android:layout_toStartOf="@id/qoshish"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:textSize="@dimen/_17ssp"/>
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fon_kurs"
+        android:hint="Kurs nomi"
+        android:textColor="@color/black"
+        android:padding="@dimen/_10sdp"/>
+    <EditText
+        android:id="@+id/about"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fon_kurs"
+        android:hint="Kurs haqida"
+        android:textColor="@color/black"
+        android:padding="@dimen/_10sdp"/>
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/qoshish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qo'shish"
+            android:textColor="#FFB800"
+            android:layout_alignParentEnd="true"
+            android:textSize="@dimen/_13ssp"/>
+        <TextView
+            android:id="@+id/yopish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yopish"
+            android:textColor="#3F51B5"
+            android:layout_toStartOf="@id/qoshish"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:textSize="@dimen/_13ssp"/>
+    </RelativeLayout>
+
+</LinearLayout>

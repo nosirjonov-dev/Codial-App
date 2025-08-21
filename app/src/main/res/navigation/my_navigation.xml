@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.codialapp.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_kurslarFragment"
+            app:destination="@id/kurslarFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mentorlarFragment"
+            app:destination="@id/mentorlarFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_guruhlarFragment"
+            app:destination="@id/guruhlarFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/kurslarFragment"
+        android:name="com.example.codialapp.fragments.Kurslar.KurslarFragment"
+        android:label="fragment_kurslar"
+        tools:layout="@layout/fragment_kurslar" >
+        <action
+            android:id="@+id/action_kurslarFragment_to_dataFragment"
+            app:destination="@id/dataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.codialapp.fragments.Kurslar.DataFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_data" />
+
+    <fragment
+        android:id="@+id/mentorlarFragment"
+        android:name="com.example.codialapp.fragments.Mentorlar.MentorlarFragment"
+        android:label="MentorlarFragment"
+        tools:layout="@layout/fragment_mentorlar">
+    <action
+        android:id="@+id/action_mentorlarFragment_to_royxatFragment"
+        app:destination="@id/royxatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/royxatFragment"
+        android:name="com.example.codialapp.fragments.Mentorlar.RoyxatFragment"
+        android:label="RoyxatFragment"
+        tools:layout="@layout/fragment_royxat"/>
+    <fragment
+        android:id="@+id/guruhlarFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.GuruhlarFragment"
+        android:label="fragment_guruhlar"
+        tools:layout="@layout/fragment_guruhlar">
+        <action
+            android:id="@+id/action_guruhlarFragment_to_addGroupFragment"
+            app:destination="@id/addGroupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addGroupFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.AddGroupFragment"
+        android:label="fragment_add_group"
+        tools:layout="@layout/fragment_add_group" >
+        <action
+            android:id="@+id/action_addGroupFragment_to_guruhQoshishFragment"
+            app:destination="@id/guruhQoshishFragment" />
+        <action
+            android:id="@+id/action_addGroupFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
+        <action
+            android:id="@+id/action_addGroupFragment_to_editGroupFragment"
+            app:destination="@id/editGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/guruhQoshishFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.GuruhQoshishFragment"
+        android:label="fragment_guruh_qoshish"
+        tools:layout="@layout/fragment_guruh_qoshish" />
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.StudentFragment"
+        android:label="fragment_student"
+        tools:layout="@layout/fragment_student" >
+        <action
+            android:id="@+id/action_studentFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+        <action
+            android:id="@+id/action_studentFragment_to_editStudentFragment"
+            app:destination="@id/editStudentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editGroupFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.EditGroupFragment"
+        android:label="fragment_edit_group"
+        tools:layout="@layout/fragment_edit_group" />
+    <fragment
+        android:id="@+id/addStudentFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.AddStudentFragment"
+        android:label="fragment_add_student"
+        tools:layout="@layout/fragment_add_student" />
+    <fragment
+        android:id="@+id/editStudentFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.EditStudentFragment"
+        android:label="fragment_edit_student"
+        tools:layout="@layout/fragment_edit_student" />
+
+</navigation>

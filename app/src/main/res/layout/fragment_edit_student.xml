@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".fragments.Guruhlar.EditStudentFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:padding="@dimen/_10sdp"
+        android:background="#FFB800">
+        <ImageView
+            android:id="@+id/chiqish"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/left"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yangi guruh qo'shish"
+            android:layout_toEndOf="@id/chiqish"
+            android:textColor="#3F51B5"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/_20ssp"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:padding="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:id="@+id/familya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Familyasi"
+            android:background="@drawable/fon_kurs"
+            android:padding="@dimen/_10sdp"/>
+        <EditText
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:id="@+id/ismi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ismi"
+            android:background="@drawable/fon_kurs"
+            android:padding="@dimen/_10sdp"/>
+        <EditText
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefon raqami"
+            android:background="@drawable/fon_kurs"
+            android:padding="@dimen/_10sdp"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fon_kurs"
+            android:padding="@dimen/_10sdp"
+            android:text="12.12.2024"
+            app:drawableEndCompat="@drawable/calendar" />
+
+
+    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3F51B5"
+        android:text="Save"
+        android:textSize="@dimen/_13ssp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_gravity="end|bottom"
+        app:cornerRadius="@dimen/_10sdp"/>
+
+</LinearLayout>
