@@ -1,4 +1,4 @@
-package com.example.codialapp.fragments.Guruhlar
+package com.example.codialapp.fragments.Guruhlar.groups
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,54 +13,35 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.codialapp.R
 import com.example.codialapp.adapters.GrupalarAdapter
 import com.example.codialapp.adapters.MyData
-import com.example.codialapp.databinding.FragmentOchilayotganGuruhBinding
+import com.example.codialapp.databinding.FragmentOchilganGuruhBinding
 import com.example.codialapp.db.MyDb
 import com.example.codialapp.models.Grupalar
 import com.example.codialapp.models.Talabalar
 
 
-class OchilayotganGuruhFragment : Fragment(), GrupalarAdapter.RvAction5 {
+class OchilganGuruhFragment : Fragment() ,GrupalarAdapter.RvAction5{
     lateinit var grupalarAdapter: GrupalarAdapter
     lateinit var myDb: MyDb
-    lateinit var list: ArrayList<Grupalar>
-
-    private val binding by lazy { FragmentOchilayotganGuruhBinding.inflate(layoutInflater) }
+    lateinit var list:ArrayList<Grupalar>
+    private val binding by lazy { FragmentOchilganGuruhBinding.inflate(layoutInflater) }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
 
+        val myLayoutManager = LinearLayoutManager(requireContext(),
+            LinearLayoutManager.VERTICAL, false)
 
-        val myLayoutManager = LinearLayoutManager(
-            requireContext(),
-            LinearLayoutManager.VERTICAL, false
-        )
-
-        binding.rvOchilayotgan.apply {
+        binding.rvOchilgan.apply {
             layoutManager = myLayoutManager
             addItemDecoration(DividerItemDecoration(requireContext(), myLayoutManager.orientation))
         }
 
-
         return binding.root
     }
-
-    override fun onResume() {
-        super.onResume()
-        myDb = MyDb(requireContext())
-        list = ArrayList()
-        for (grupalar in myDb.showGroup()) {
-            if (grupalar.mentor_id?.kurs_id?.id == MyData.kurslar?.id && grupalar.ochilganmi == 0) {
-                list.add(grupalar)
-            }
-        }
-        grupalarAdapter = GrupalarAdapter(this@OchilayotganGuruhFragment, list, myDb)
-
-        binding.rvOchilayotgan.adapter = grupalarAdapter
-    }
     override fun viewClick(grupalar: Grupalar, position: Int) {
-        findNavController().navigate(R.id.studentFragment, bundleOf("key10" to grupalar.id))
+        findNavController().navigate(R.id.studentFragment, bundleOf("raqam" to 100, "key10" to grupalar.id))
     }
 
     override fun editClick(grupalar: Grupalar, position: Int) {
@@ -86,6 +67,20 @@ class OchilayotganGuruhFragment : Fragment(), GrupalarAdapter.RvAction5 {
                 .show()
         }
         onResume()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        myDb = MyDb(requireContext())
+        list = ArrayList()
+        for (grupalar in myDb.showGroup()) {
+            if (grupalar.mentor_id?.kurs_id?.id== MyData.kurslar?.id && grupalar.ochilganmi==1){
+                list.add(grupalar)
+            }
+        }
+        grupalarAdapter = GrupalarAdapter(this@OchilganGuruhFragment,list,myDb)
+
+        binding.rvOchilgan.adapter = grupalarAdapter
     }
 
 

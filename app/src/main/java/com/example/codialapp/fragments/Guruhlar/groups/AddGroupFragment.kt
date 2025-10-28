@@ -1,4 +1,4 @@
-package com.example.codialapp.fragments.Guruhlar
+package com.example.codialapp.fragments.Guruhlar.groups
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,11 +10,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.example.codialapp.R
 import com.example.codialapp.adapters.MyViewPagerAdapter
-import com.example.codialapp.adapters.MyData
 import com.example.codialapp.databinding.FragmentAddGroupBinding
 import com.example.codialapp.db.MyDb
 import com.example.codialapp.models.Kurslar
-import com.google.android.material.tabs.TabLayoutMediator
 
 
 @Suppress("UNREACHABLE_CODE")

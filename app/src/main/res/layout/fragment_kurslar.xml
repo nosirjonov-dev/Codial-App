@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".fragments.Kurslar.KurslarFragment">
+    tools:context=".fragments.Kurslar.home.KurslarFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"

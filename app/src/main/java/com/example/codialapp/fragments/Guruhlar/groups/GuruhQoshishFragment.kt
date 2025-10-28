@@ -1,4 +1,4 @@
-package com.example.codialapp.fragments.Guruhlar
+package com.example.codialapp.fragments.Guruhlar.groups
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,34 +8,24 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.codialapp.R
-import com.example.codialapp.adapters.MyData
-import com.example.codialapp.databinding.FragmentEditGroupBinding
+import com.example.codialapp.databinding.FragmentGuruhQoshishBinding
 import com.example.codialapp.db.MyDb
 import com.example.codialapp.models.Grupalar
 import com.example.codialapp.models.Kurslar
 import com.example.codialapp.models.Mentorlar
 
-
-class EditGroupFragment : Fragment() {
+class GuruhQoshishFragment : Fragment() {
     lateinit var mentorList:ArrayList<String>
     lateinit var myDb: MyDb
-    lateinit var abs: Mentorlar
-    private val binding by lazy { FragmentEditGroupBinding.inflate(layoutInflater) }
+    lateinit var abs:Mentorlar
+    private val binding by lazy { FragmentGuruhQoshishBinding.inflate(layoutInflater) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var isOpened = 0
-        val id1 = arguments?.getInt("edit")
+        val p = arguments?.getSerializable("vali") as Kurslar
         myDb = MyDb(requireContext())
-        for (grupalar in myDb.showGroup()) {
-            if (grupalar.id == id1) {
-                binding.nameGroup.setText(grupalar.name)
-                isOpened = grupalar.ochilganmi
-            }
-        }
         vaqti()
         kunlari()
         mentorlar()
@@ -44,7 +34,7 @@ class EditGroupFragment : Fragment() {
         binding.kunlari.adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,kunlari())
 
         var vaqt = ""
-        binding.vaqti.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener{
+        binding.vaqti.setOnItemSelectedListener(object :AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -94,16 +84,14 @@ class EditGroupFragment : Fragment() {
         })
         binding.btnSave.setOnClickListener {
             val grupalar = Grupalar(
-                id1,
                 binding.nameGroup.text.toString(),
                 abs,
                 kun,
                 vaqt,
-                isOpened
+                0
             )
             println(grupalar)
-            println("12345")
-            myDb.editGroup(grupalar)
+            myDb.addGroup(grupalar)
             Toast.makeText(requireContext(), "Saqlandi", Toast.LENGTH_SHORT).show()
             requireActivity().supportFragmentManager.popBackStack()
         }
@@ -129,12 +117,12 @@ class EditGroupFragment : Fragment() {
         return list
     }
     fun mentorlar(){
-        myDb = MyDb(requireContext())
-        val p = MyData.kurslar
+        val p = arguments?.getSerializable("vali") as Kurslar
         mentorList = ArrayList()
+        myDb = MyDb(requireContext())
         for (mentorlar in myDb.showMentor()) {
             println(mentorlar)
-            if (mentorlar.kurs_id?.id==p?.id){
+            if (mentorlar.kurs_id?.id==p.id){
                 println(mentorlar)
                 mentorList.add("${mentorlar.name} ${mentorlar.lastName}")
             }

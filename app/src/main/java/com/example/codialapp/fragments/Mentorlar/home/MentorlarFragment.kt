@@ -1,4 +1,4 @@
-package com.example.codialapp.fragments.Mentorlar
+package com.example.codialapp.fragments.Mentorlar.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

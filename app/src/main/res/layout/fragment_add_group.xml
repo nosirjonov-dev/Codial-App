@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".fragments.Guruhlar.AddGroupFragment">
+    tools:context=".fragments.Guruhlar.groups.AddGroupFragment">
 
     <RelativeLayout
         android:id="@+id/toolbar"

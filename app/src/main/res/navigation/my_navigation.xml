@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/kurslarFragment"
-        android:name="com.example.codialapp.fragments.Kurslar.KurslarFragment"
+        android:name="com.example.codialapp.fragments.Kurslar.home.KurslarFragment"
         android:label="fragment_kurslar"
         tools:layout="@layout/fragment_kurslar" >
         <action
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/mentorlarFragment"
-        android:name="com.example.codialapp.fragments.Mentorlar.MentorlarFragment"
+        android:name="com.example.codialapp.fragments.Mentorlar.home.MentorlarFragment"
         android:label="MentorlarFragment"
         tools:layout="@layout/fragment_mentorlar">
     <action
@@ -54,7 +54,7 @@
         tools:layout="@layout/fragment_royxat"/>
     <fragment
         android:id="@+id/guruhlarFragment"
-        android:name="com.example.codialapp.fragments.Guruhlar.GuruhlarFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.home.GuruhlarFragment"
         android:label="fragment_guruhlar"
         tools:layout="@layout/fragment_guruhlar">
         <action
@@ -64,7 +64,7 @@
 
     <fragment
         android:id="@+id/addGroupFragment"
-        android:name="com.example.codialapp.fragments.Guruhlar.AddGroupFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.groups.AddGroupFragment"
         android:label="fragment_add_group"
         tools:layout="@layout/fragment_add_group" >
         <action
@@ -79,12 +79,12 @@
     </fragment>
     <fragment
         android:id="@+id/guruhQoshishFragment"
-        android:name="com.example.codialapp.fragments.Guruhlar.GuruhQoshishFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.groups.GuruhQoshishFragment"
         android:label="fragment_guruh_qoshish"
         tools:layout="@layout/fragment_guruh_qoshish" />
     <fragment
         android:id="@+id/studentFragment"
-        android:name="com.example.codialapp.fragments.Guruhlar.StudentFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.student.StudentFragment"
         android:label="fragment_student"
         tools:layout="@layout/fragment_student" >
         <action
@@ -97,17 +97,17 @@
 
     <fragment
         android:id="@+id/editGroupFragment"
-        android:name="com.example.codialapp.fragments.Guruhlar.EditGroupFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.groups.EditGroupFragment"
         android:label="fragment_edit_group"
         tools:layout="@layout/fragment_edit_group" />
     <fragment
         android:id="@+id/addStudentFragment"
-        android:name="com.example.codialapp.fragments.Guruhlar.AddStudentFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.student.AddStudentFragment"
         android:label="fragment_add_student"
         tools:layout="@layout/fragment_add_student" />
     <fragment
         android:id="@+id/editStudentFragment"
-        android:name="com.example.codialapp.fragments.Guruhlar.EditStudentFragment"
+        android:name="com.example.codialapp.fragments.Guruhlar.student.EditStudentFragment"
         android:label="fragment_edit_student"
         tools:layout="@layout/fragment_edit_student" />
 

@@ -1,4 +1,4 @@
-package com.example.codialapp.fragments.Kurslar
+package com.example.codialapp.fragments.Kurslar.home
 
 import android.app.AlertDialog
 import android.os.Bundle
